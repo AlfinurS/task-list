@@ -6,9 +6,3 @@ module.exports = defineConfig({
 module.exports = {
   lintOnSave: process.env.NODE_ENV !== 'production'
 }
-
-module.exports = {
-  css: {
-    requireModuleExtension: false
-  }
-}
