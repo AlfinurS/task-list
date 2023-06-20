@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <PageComponent/>
+    <HeaderComponent></HeaderComponent>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
-
 <script>
-import PageComponent from './PageComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    PageComponent,
+  HeaderComponent,
   }
 }
 </script>

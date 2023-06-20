@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "watch": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "watch": "vue-cli-service serve"
   },
   "dependencies": {
     "chart.js": "^2.9.4",
     "core-js": "^3.8.3",
+    "el-dialog": "^1.0.0",
+    "element-ui": "^2.15.13",
     "i": "^0.3.7",
     "vue": "^2.6.14",
     "vue-chartjs": "^3.5.1",
+    "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
@@ -21,6 +24,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",

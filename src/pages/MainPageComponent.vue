@@ -42,21 +42,20 @@
 
 
 <script>
-
-import ItemCardComponent from './components/ItemCardComponent.vue'
-import DoughnutComponent from './components/charts/DoughnutComponent.vue'
-import MiniDoughnutComponent from './components/charts/MiniDoughnutComponent.vue'
-import OzonDoughnutComponent from './components/charts/OzonDoughnutComponent.vue'
-import WilDoughnutComponent from './components/charts/WilDoughnutComponent.vue'
-import VkusDoughnutComponent from './components/charts/VkusDoughnutComponent.vue'
-import ChartComponent from './components/charts/ChartComponent.vue'
-import RandomChart from './components/charts/RandomChart.vue'
-import PieComponent from './components/charts/PieComponent.vue'
-import LineComponent from './components/charts/LineComponent.vue'
+import ItemCardComponent from '../components/ItemCardComponent.vue'
+import DoughnutComponent from '../components/charts/DoughnutComponent.vue'
+import MiniDoughnutComponent from '../components/charts/MiniDoughnutComponent.vue'
+import OzonDoughnutComponent from '../components/charts/OzonDoughnutComponent.vue'
+import WilDoughnutComponent from '../components/charts/WilDoughnutComponent.vue'
+import VkusDoughnutComponent from '../components/charts/VkusDoughnutComponent.vue'
+import ChartComponent from '../components/charts/ChartComponent.vue'
+import RandomChart from '../components/charts/RandomChart.vue'
+import PieComponent from '../components/charts/PieComponent.vue'
+import LineComponent from '../components/charts/LineComponent.vue'
 
 
 export default {
-  name: 'PageComponent',
+  name: 'MainPageComponent',
   components: {
     ItemCardComponent,
     DoughnutComponent,
