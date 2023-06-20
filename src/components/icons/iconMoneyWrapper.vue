@@ -18,18 +18,19 @@
 <script>
 export default {
   name: "iconsWrapper",
+
   props: {
     width: {
       type: [Number, String],
-      default: 18,
+      default: 38,
     },
     height: {
       type: [Number, String],
-      default: 18,
+      default: 38,
     },
     viewBox: {
       type: String,
-      default: "0 0 18 18",
+      default: "0 0 38 38",
     },
     id: {
       type: String,
@@ -49,10 +50,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .wrapper {
   position: relative;
   overflow: hidden;
+  background-color: rgba(202, 159, 255, 0.205);
+  border-radius: 100px;
 }
 .image {
   position: absolute;

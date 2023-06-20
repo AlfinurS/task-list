@@ -1,20 +1,31 @@
 <template>
   <div class="container">
-    <span>Список задач </span>
-    
-    <div class="list">
-      <div class="task__wrapper">
-        <span class="task__label">Задача</span>
+    <div class="content">
+      <div class="content__subtitles">
+          <span class="task__label">Задача</span>
+          <span class="task__label">Комментарии</span>
+          <span class="task__label">Срок</span>
       </div>
-      <div class="task__wrapper">
-        <span class="task__label">Комментарии</span>
-      </div>
-      <div class="task__wrapper">
-        <span class="task__label">Срок</span>
-      </div>
-      <div class="task__compensator"></div>
-      <div class="task__compensator"></div>
+      <div class="header__wrapp">
+          <div class="header__search">
+            <form action="#" class="search__form">
+              <input
+                type="text"
+                class="search__input"
+                v-model="search"
+                placeholder="Поиск задачи"
+              />
+              <button class="search__btn" type="submit">Поиск</button>
+            </form>
+          </div>
+          
+        <div class="">
+          <button @click="showCreateModal" class="btn btn-primary">
+            Добавить
+          </button>
+        </div>
     </div>
+
 
         <ItemListComponent
       v-for="task in filteredTasks"
@@ -30,6 +41,7 @@
       :dataProps="dataContactModal"
       :variant="modalVariant"
     ></TaskModal>
+    </div>
   </div>
 </template>
 
@@ -102,10 +114,10 @@ export default {
       this.saveLocalStorage();
     },
 
-    showCreateModal() {
-      const newContact = JSON.parse(JSON.stringify());
-      newContact.id = Date.now();
-      this.dataContactModal = newContact;
+    showCreateModal(task) {
+      const newTask = JSON.parse(JSON.stringify(task));
+      newTask.id = Date.now();
+      this.dataContactModal = newTask;
       this.modalVariant = "create";
       const taskModalRef = this.$refs.taskModalRef;
       taskModalRef.showModal();

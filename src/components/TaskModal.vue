@@ -1,7 +1,6 @@
 <template>
   <div>
-    <el-dialog title= "create" :visible.sync="isShowModal">
-
+    <el-dialog :title="cumputedTitle" :visible.sync="isShowModal">
       <el-form :model="form">
         <el-form-item label="Задача" :label-width="formLabelWidth">
           <el-input v-model="form.task" autocomplete="off"></el-input>
@@ -15,8 +14,8 @@
       </el-form>
 
       <span slot="footer" class="dialog-footer">
-        <el-button @click="isShowModal = false">Cancel</el-button>
-        <el-button type="primary" @click="isShowModal = false">Confirm</el-button>
+        <el-button class="btn btn-plain" @click="closeModal">Закрыть</el-button>
+        <el-button class="btn btn-primary" type="primary" @click="saveData">Сохранить</el-button>
       </span>
     </el-dialog>
   </div>
@@ -24,36 +23,43 @@
 
 
 <script>
-/* import iconClose from './icons/iconClose.vue' */
 
 export default {
   name: 'TaskModal',
-  components: {
-    /* iconClose, */
-  },
+  components: {  },
+  
+  emits: ["saveData"],
+
   props: {
       dataProps: {
         type: Object,
         default: () => ({}),
       },
-  },
-  emits: ["saveData"],
       variant: {
       type: String,
       default: "create",
       },
-
+  },
   data() {
     return {
       form: {  
             id: null,
             task: "",
             comment: "",
-            deadline: "",
+            deadline: null,
           },
       isShowModal: false,
       formLabelWidth: '120px'
     };
+  },
+
+  computed: {
+    cumputedTitle() {
+      if (this.variant === "create") {
+        return "Создать задачу"
+      }
+      return "Редактировать задачу";
+    },
   },
 
   methods: {
